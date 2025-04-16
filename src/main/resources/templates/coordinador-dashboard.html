@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Coordinador</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="dashboard-bg">
+
+  <div class="dashboard-container">
+
+    <img src="/image.png" alt="Saber Pro Logo" class="logo">
+
+    <h2>Bienvenido Coordinador</h2>
+    <h3 class="coordinador">Listado de Estudiantes</h3>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Estado</th>
+            <th>Puntaje</th>
+            <th>Nivel</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr th:each="e : ${estudiantes}">
+                <td data-label="Cédula" th:text="${e.cedula}"></td>
+                <td data-label="Nombre" th:text="${e.nombre}"></td>
+                <td data-label="Apellido" th:text="${e.apellido}"></td>
+                <td data-label="Correo" th:text="${e.correo}"></td>
+                <td data-label="Teléfono" th:text="${e.telefono}"></td>
+                <td data-label="Estado" th:text="${e.mediaNacional}"></td>
+                <td data-label="Puntaje Saber Pro" th:text="${e.puntajeSaberPro}"></td>
+                <td data-label="Nivel Saber Pro" th:text="${e.nivelSaberPro}"></td>
+                <td data-label="Acciones" class="acciones">
+                  <a th:href="@{'/ver-estudiante/' + ${e.cedula}}" class="btn-icon" title="Ver">
+                    <i class="fa-solid fa-eye"></i>
+                  </a>
+                  <a th:href="@{'/editar-estudiante/' + ${e.cedula}}" class="btn-icon" title="Editar">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </a>
+                  <a th:href="@{'/eliminar-estudiante/' + ${e.cedula}}" class="btn-icon" title="Eliminar">
+                    <i class="fa-solid fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+              
+        </tbody>
+      </table>
+    </div>
+
+    <div class="actions">
+      <a href="/agregar-estudiante" class="btn-coordinador">Agregar nuevo estudiante</a>
+      <a href="/" class="btn-estudiante">Cerrar sesión</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

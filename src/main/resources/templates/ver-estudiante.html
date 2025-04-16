@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalles del Estudiante</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h2>Detalles del Estudiante</h2>
+
+    <table>
+      <tr><th>Cédula:</th><td th:text="${estudiante.cedula}"></td></tr>
+      <tr><th>Nombre:</th><td th:text="${estudiante.nombre}"></td></tr>
+      <tr><th>Apellido:</th><td th:text="${estudiante.apellido}"></td></tr>
+      <tr><th>Correo:</th><td th:text="${estudiante.correo}"></td></tr>
+      <tr><th>Teléfono:</th><td th:text="${estudiante.telefono}"></td></tr>
+      <tr><th>Numero Registro Prueba:</th><td th:text="${estudiante.numeroRegistro}"></td></tr>
+      <tr><th>Puntaje Saber Pro:</th><td th:text="${estudiante.puntajeSaberPro}"></td></tr>
+      <tr><th>Nivel Saber Pro:</th><td>
+        <span th:switch="${estudiante.nivelSaberPro}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelSaberPro}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelSaberPro}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelSaberPro}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelSaberPro}"></span>
+          <span th:case="*"
+                class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Estado:</th><td>
+        <span th:switch="${estudiante.mediaNacional}">
+          <span th:case="'Aprobado'" class="estado-verde" th:text="${estudiante.mediaNacional}"></span>
+          <span th:case="'Reprobado'" class="estado-naranja" th:text="${estudiante.mediaNacional}"></span>
+          <span th:case="'Anulado'" class="estado-amarillo" th:text="${estudiante.mediaNacional}"></span>
+          <span th:case="*" class="estado-naranja" th:text="'Sin estado'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Puntaje Comunicación Escrita:</th><td th:text="${estudiante.puntajeComunicacion}"></td></tr>
+      <tr><th>Nivel Comunicación Escrita:</th><td>
+        <span th:switch="${estudiante.nivelComunicacion}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelComunicacion}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelComunicacion}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelComunicacion}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelComunicacion}"></span>
+          <span th:case="*"
+                class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Puntaje Razonamiento Cuantitativo:</th><td th:text="${estudiante.puntajeCuantitativo}"></td></tr>
+      <tr><th>Nivel Razonamiento Cuantitativo:</th><td>
+        <span th:switch="${estudiante.nivelCuantitativo}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelCuantitativo}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelCuantitativo}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelCuantitativo}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelCuantitativo}"></span>
+          <span th:case="*"
+                class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Puntaje Lectura Critica:</th><td th:text="${estudiante.puntajeLectura}"></td></tr>
+      <tr><th>Nivel Lectura Critica:</th><td>
+        <span th:switch="${estudiante.nivelLectura}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelLectura}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelLectura}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelLectura}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelLectura}"></span>
+          <span th:case="*"
+                class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Puntaje Competencias Ciudadanas:</th><td th:text="${estudiante.puntajeCiudadanas}"></td></tr>
+      <tr><th>Nivel Competencias Ciudadanas:</th><td>
+        <span th:switch="${estudiante.nivelCiudadanas}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelCiudadanas}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelCiudadanas}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelCiudadanas}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelCiudadanas}"></span>
+          <span th:case="*"
+                class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Puntaje Inglés:</th><td th:text="${estudiante.puntajeIngles}"></td></tr>
+      <tr><th>Nivel Inglés:</th><td>
+        <span th:switch="${estudiante.nivelIngles}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelIngles}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelIngles}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelIngles}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelIngles}"></span>
+          <span th:case="*"
+                class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Puntaje Formulacion de Proyectos de Ingeniería:</th><td th:text="${estudiante.puntajeProyectos}"></td></tr>
+      <tr><th>Nivel Formulacion de Proyectos de Ingeniería:</th><td>
+        <span th:switch="${estudiante.nivelProyectos}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelProyectos}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelProyectos}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelProyectos}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelProyectos}"></span>
+          <span th:case="*"
+                class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Puntaje Pensamiento Científico-Matemáticas y Estadística:</th><td th:text="${estudiante.puntajePensamiento}"></td></tr>
+      <tr><th>Nivel Pensamiento Científico-Matemáticas y Estadística:</th><td>
+        <span th:switch="${estudiante.nivelPensamiento}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelPensamiento}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelPensamiento}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelPensamiento}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelPensamiento}"></span>
+          <span th:case="*"
+                class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Puntaje Diseño de Software:</th><td th:text="${estudiante.puntajeSoftware}"></td></tr>
+      <tr><th>Nivel Diseño de Software:</th><td>
+        <span th:switch="${estudiante.nivelSoftware}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelSoftware}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelSoftware}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelSoftware}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelSoftware}"></span>
+          <span th:case="*"
+                class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td></tr>
+      <tr><th>Nivel General Inglés:</th><td th:text="${estudiante.nivelGeneralIngles}"></td></tr>
+    </table>
+
+    <div class="actions">
+      <a href="/coordinador-dashboard" class="btn-coordinador">Volver al Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>
