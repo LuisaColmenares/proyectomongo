@@ -116,6 +116,34 @@
     </tr>
 
     <tr>
+      <td>Formulación de Proyectos de Ingeniería</td>
+      <td th:text="${estudiante.puntajeProyectos}"></td>
+      <td>
+        <span th:switch="${estudiante.nivelProyectos}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelProyectos}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelProyectos}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelProyectos}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelProyectos}"></span>
+          <span th:case="*" class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Pensamiento Científico-Matemáticas y Estadística</td>
+      <td th:text="${estudiante.puntajePensamiento}"></td>
+      <td>
+        <span th:switch="${estudiante.nivelPensamiento}">
+          <span th:case="'Nivel 4'" class="nivel-verde" th:text="${estudiante.nivelPensamiento}"></span>
+          <span th:case="'Nivel 3'" class="nivel-amarillo" th:text="${estudiante.nivelPensamiento}"></span>
+          <span th:case="'Nivel 2'" class="nivel-azul" th:text="${estudiante.nivelPensamiento}"></span>
+          <span th:case="'Nivel 1'" class="nivel-rojo" th:text="${estudiante.nivelPensamiento}"></span>
+          <span th:case="*" class="nivel-rojo" th:text="'Sin nivel'"></span>
+        </span>
+      </td>
+    </tr>
+
+    <tr>
       <td>Diseño de Software</td>
       <td th:text="${estudiante.puntajeSoftware}"></td>
       <td>
